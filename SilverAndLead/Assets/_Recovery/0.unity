@@ -1745,7 +1745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Weapon
   damage: 25
-  shootyCamera: {fileID: 1027512551}
+  shootyCamera: {fileID: 612299741}
 --- !u!1001 &1301826432
 PrefabInstance:
   m_ObjectHideFlags: 0
