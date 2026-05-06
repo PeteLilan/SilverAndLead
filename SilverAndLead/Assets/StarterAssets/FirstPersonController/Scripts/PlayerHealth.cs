@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -70,6 +71,6 @@ public class PlayerHealth : MonoBehaviour
 
     void GameOver()
     {
-
+        SceneManager.LoadScene("GameOver");
     }
 }
