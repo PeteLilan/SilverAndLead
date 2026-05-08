@@ -6,15 +6,22 @@ public class Weapon : MonoBehaviour
     [SerializeField] float damage = 25f;
     [SerializeField] Camera shootyCamera;
     StarterAssetsInputs starterAssetsInputs;
+    [SerializeField] float delayShots = 0.5f;
+    float lastShotTime = 0f;
     void Awake()
     {
         starterAssetsInputs = GetComponentInParent<StarterAssetsInputs>();
     }
     void Update()
     {
-        if (starterAssetsInputs.shoot)
+        //Checks for leftmouseclick and if enough time has passed since the last shot
+        if (starterAssetsInputs.shoot && Time.time - lastShotTime >= delayShots)
         {
+            //Logging current time
+            lastShotTime = Time.time;
+            //Managing audio
             AudioManager.Instance?.PlayShoot();
+            //Using raycast to fire projectile
             RaycastHit hit;
             if (Physics.Raycast(
             shootyCamera.transform.position,
