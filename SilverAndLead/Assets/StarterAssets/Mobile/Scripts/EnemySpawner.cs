@@ -3,57 +3,51 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject swarmerPrefab;
-   /* [SerializeField]
-    private GameObject shooterPrefab;
-    [SerializeField]
-    private GameObject tankPrefab;
-    [SerializeField]
-    private GameObject flyingPrefab;
-   */
+    [SerializeField] private GameObject swarmerPrefab;
+    [SerializeField] private float swarmerInterval = 3.5f;
+    [SerializeField] private int maxCount = 50;
+    [SerializeField] private float spawnRadius = 10f;
 
-    [SerializeField]
-    private float swarmerInterval = 3.5f;
-   /* [SerializeField]
-    private float shooterInterval = 25.0f;
-    [SerializeField]
-    private float tankInterval = 15.0f;
-    [SerializeField]
-    private float flyingInterval = 6.0f;
-   */
+    private int currentCount = 0;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         StartCoroutine(SpawnEnemy(swarmerInterval, swarmerPrefab));
-        /*
-        StartCoroutine(SpawnEnemy(shooterInterval, shooterPrefab));
-        StartCoroutine(SpawnEnemy(tankInterval, tankPrefab));
-        StartCoroutine(SpawnEnemy(flyingInterval, flyingPrefab));
-        */
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
 
     private IEnumerator SpawnEnemy(float interval, GameObject enemy)
     {
         while (true)
         {
+            while (currentCount >= maxCount)
+            {
+                yield return null;
+            }
+
             yield return new WaitForSeconds(interval);
 
-            float radius = 10f; // how far from the spawner enemies appear
-            //Creates a random point within a radius of the spawner
-            Vector2 randomOffset = Random.insideUnitCircle * radius;
-            //Spawns the enemy at the random position
+            if (currentCount >= maxCount)
+                continue;
+
+            Vector2 randomOffset = Random.insideUnitCircle * spawnRadius;
             Vector3 spawnPosition = transform.position + new Vector3(randomOffset.x, randomOffset.y, 0f);
 
-            Instantiate(enemy, spawnPosition, Quaternion.identity);
+            GameObject newEnemy = Instantiate(enemy, spawnPosition, Quaternion.identity);
+
+            currentCount++;
+
+            EnemyTracker tracker = newEnemy.AddComponent<EnemyTracker>();
+            tracker.Init(this);
+
+            Debug.Log("Current Enemy Count: " + currentCount);
         }
+    }
+
+    public void EnemyDied()
+    {
+        currentCount--;
+        currentCount = Mathf.Max(currentCount, 0);
+
+        Debug.Log("Enemy died. Current Enemy Count: " + currentCount);
     }
 }
