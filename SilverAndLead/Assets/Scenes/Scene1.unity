@@ -2538,9 +2538,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   swarmerPrefab: {fileID: 787780711076702599, guid: b19e31c79759ae144bd9bfc360ff5d69, type: 3}
-  swarmerInterval: 1
+  swarmerInterval: 3.5
   maxCount: 50
-  spawnRadius: 10
+  spawnRadius: 25
 --- !u!4 &1206679897
 Transform:
   m_ObjectHideFlags: 0
@@ -3243,7 +3243,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 3eab74d0fbcf18f418218a6b5323545c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
