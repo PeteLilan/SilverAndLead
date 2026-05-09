@@ -18,6 +18,9 @@ public class Robot : MonoBehaviour
     // Update destination every frame so robot follows player
     void Update()
     {
-        agent.SetDestination(player.transform.position);
+        if (agent.isActiveAndEnabled && agent.isOnNavMesh)
+        {
+            agent.SetDestination(player.transform.position);
+        }
     }
 }
