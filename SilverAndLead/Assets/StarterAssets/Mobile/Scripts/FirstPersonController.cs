@@ -20,7 +20,6 @@ namespace StarterAssets
 		public float RotationSpeed = 1.0f;
 		[Tooltip("Acceleration and deceleration")]
 		public float SpeedChangeRate = 10.0f;
-		public static float score = 0.0f;
 
         [Space(10)]
 		[Tooltip("The height the player can jump")]
