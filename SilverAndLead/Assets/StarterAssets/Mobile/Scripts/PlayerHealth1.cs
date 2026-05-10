@@ -14,7 +14,6 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] int currentHealth;
     [SerializeField] float invincibilityDuration = 1.5f;
     [SerializeField] TextMeshProUGUI healthText;
-    [SerializeField] TextMeshProUGUI scoreText;
 
     // ─── State ───────────────────────────────────────────────────────────
     bool isInvincible;
@@ -41,7 +40,6 @@ public class PlayerHealth : MonoBehaviour
     {
         HandleInvincibility();
         healthText.text = $"HP: {currentHealth}";
-        scoreText.text = $"Score: {FirstPersonController.score}";
     }
 
     // ─── Invincibility Flash ─────────────────────────────────────────────
