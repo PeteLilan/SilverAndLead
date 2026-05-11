@@ -2705,7 +2705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   swarmerPrefab: {fileID: 787780711076702599, guid: b19e31c79759ae144bd9bfc360ff5d69, type: 3}
-  swarmerInterval: 3.5
+  swarmerInterval: 2
   maxCount: 50
   spawnRadius: 25
 --- !u!4 &1206679897
