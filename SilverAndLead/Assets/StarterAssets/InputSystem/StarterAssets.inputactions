@@ -28,7 +28,7 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "8c4abdf8-4099-493a-aa1a-129acec7c3df",
-                    "expectedControlType": "",
+                    "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -45,7 +45,7 @@
                 {
                     "name": "Shoot",
                     "type": "Button",
-                    "id": "895bbb28-a90e-41b5-b69a-30be4bb066a3",
+                    "id": "38178a57-065e-4840-a5b1-bac8db6b51ae",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -231,22 +231,11 @@
                 },
                 {
                     "name": "",
-                    "id": "a89af8dc-2b64-44d3-bb78-97312294bc04",
+                    "id": "fcdb521c-0795-4d0b-a2ea-33a646650335",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";KeyboardMouse",
-                    "action": "Shoot",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "29ae3c1e-a5cb-4fd1-b7bb-49d6eb9c1a45",
-                    "path": "<Gamepad>/rightTrigger",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Xbox Controller",
+                    "groups": "",
                     "action": "Shoot",
                     "isComposite": false,
                     "isPartOfComposite": false
