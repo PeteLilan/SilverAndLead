@@ -13,6 +13,7 @@ namespace StarterAssets
 		public bool jump;
 		public bool sprint;
         public bool shoot;
+		public bool inventory;
 
         [Header("Movement Settings")]
 		public bool analogMovement;
@@ -84,6 +85,15 @@ namespace StarterAssets
         public void ShootInput(bool newShootState)
         {
             shoot = newShootState;
+        }
+
+		public void OnInventory(InputValue value) 
+		{
+			InventoryInput(value.isPressed);
+        }
+		public void InventoryInput(bool newInventoryState) 
+		{
+            inventory = newInventoryState;
         }
     }
 	
