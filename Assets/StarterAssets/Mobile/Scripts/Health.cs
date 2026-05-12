@@ -6,6 +6,7 @@ public class Health : MonoBehaviour
 {
     public event Action OnDeath;
     [SerializeField] float maxHealth = 100f;
+    [SerializeField] float scoreOutput = 100f;
     float currentHealth;
 
     void Start()
@@ -20,7 +21,7 @@ public class Health : MonoBehaviour
 
         if (currentHealth <= 0)
         {
-            ScoreDisplay.score = ScoreDisplay.score + 100;
+            ScoreDisplay.score = ScoreDisplay.score + scoreOutput;
             Die();
         }
     }
