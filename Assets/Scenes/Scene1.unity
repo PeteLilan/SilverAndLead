@@ -5743,6 +5743,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BigRobot
       objectReference: {fileID: 0}
+    - target: {fileID: 6713789348342161027, guid: d86c3230e73de4645940afd291bcb1d4, type: 3}
+      propertyPath: m_IncludeLayers.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7086431531190910157, guid: d86c3230e73de4645940afd291bcb1d4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 17.91
