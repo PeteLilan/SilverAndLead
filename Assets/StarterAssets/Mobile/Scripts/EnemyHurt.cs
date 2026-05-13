@@ -10,7 +10,9 @@ public class EnemyHurt : MonoBehaviour
         {
             PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
             if (playerHealth != null)
+            {
                 playerHealth.TakeDamage(damageAmount);
+            }
         }
     }
 }

@@ -18,6 +18,7 @@ public class Health : MonoBehaviour
     {
         currentHealth -= amount;
         Debug.Log(gameObject.name + " health: " + currentHealth);
+        AudioManager.Instance?.PlayHit();
 
         if (currentHealth <= 0)
         {

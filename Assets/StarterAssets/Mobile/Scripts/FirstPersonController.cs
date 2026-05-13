@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 #if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
 #endif
@@ -63,6 +64,7 @@ namespace StarterAssets
 		// timeout deltatime
 		private float _jumpTimeoutDelta;
 		private float _fallTimeoutDelta;
+		private Boolean hasPlayed = false;
 
 	
 #if ENABLE_INPUT_SYSTEM
@@ -214,19 +216,25 @@ namespace StarterAssets
 				// Jump
 				if (_input.jump && _jumpTimeoutDelta <= 0.0f)
 				{
-					// the square root of H * -2 * G = how much velocity needed to reach desired height
-					_verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
+					if (!hasPlayed)
+					{
+                        AudioManager.Instance?.PlayJump();
+						hasPlayed = true;
+                    }
+                    // the square root of H * -2 * G = how much velocity needed to reach desired height
+                    _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 				}
 
 				// jump timeout
 				if (_jumpTimeoutDelta >= 0.0f)
 				{
 					_jumpTimeoutDelta -= Time.deltaTime;
-				}
+                }
 			}
 			else
 			{
 				// reset the jump timeout timer
+				hasPlayed = false;
 				_jumpTimeoutDelta = JumpTimeout;
 
 				// fall timeout
