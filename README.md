@@ -15,3 +15,5 @@ Feature implemented
 Enemies
   -Red slime - short red slime that takes 4 shots to kill, gives 100 points upon death
   -Dark slime - short and stout darkly colored slime that takes 10 shots to kill, but gives 250 points upon death
+Demo video
+  https://www.youtube.com/watch?v=joE1eSd9L3I
