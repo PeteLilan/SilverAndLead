@@ -1,9 +1,9 @@
 # CS 4700 Spring 2026 project for Dr. Jamshidi by Neil Patel and Jacob Carasco
 
 ## KeyBoard Controls
-  WASD is for standard controls
-  Shift is to sprint
-  Left mouse button to shoot
+- WASD is for standard controls
+- Shift is to sprint
+- Left mouse button to shoot
 
 ## Game overview
 The objective of the game is to kill monsters, and get a high score, it's very much an arcade-style game.
@@ -15,7 +15,7 @@ How long can YOU survive?
   - [x] Player movement options
   - [x] Shooting mechanics
   - [x] Enemies that track player position
-  - [x]A working score system
+  - [x] A working score system
   - [x] Sound Effects
   - [x] 2 different enemy types
   - [ ] Survial mechanics
