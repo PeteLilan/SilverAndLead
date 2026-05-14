@@ -21,7 +21,7 @@ How long can YOU survive?
   - [ ] Survial mechanics
   - [ ] Crafting
   - [ ] Inventory
-  - [ ] Ammunation
+  - [ ] Ammunition
   - [ ] Multiple gun types
 ## Enemies
   - Red slime - short red slime that takes 4 shots to kill, gives 100 points upon death
